@@ -10,8 +10,8 @@
 
 using namespace std;
 
-constexpr int num_letters = 26;
-constexpr int num_workers = 10;
+constexpr size_t num_letters = 26;
+constexpr size_t num_workers = 10;
 
 void init(array<int, num_letters>& statistics);
 

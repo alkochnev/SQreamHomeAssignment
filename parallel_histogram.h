@@ -14,11 +14,27 @@ using namespace std;
 typedef struct taskInfo {
 	list<string>* rows;
 	array<int, num_letters>* statistics;
-	int startpos;
-	int chuncksize;
+	size_t startpos;
+	size_t chuncksize;
 
-	taskInfo(list<string>* r, array<int, num_letters>* s, int sp, int cs) {
+	taskInfo(list<string>* r, array<int, num_letters>* s, size_t sp, size_t cs) {
 		rows = r; statistics = s; startpos = sp; chuncksize = cs;
+	}
+
+	taskInfo(taskInfo&& o) {
+		rows = o.rows;
+		statistics = o.statistics;
+		startpos = o.startpos;
+		chuncksize = o.chuncksize;
+		o.rows = nullptr;
+		o.statistics = nullptr;
+	}
+
+	taskInfo(taskInfo& o) {
+		rows = o.rows;
+		statistics = o.statistics;
+		startpos = o.startpos;
+		chuncksize = o.chuncksize;
 	}
 } taskInfo;
 
