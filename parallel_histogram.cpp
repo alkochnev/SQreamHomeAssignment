@@ -40,11 +40,6 @@ void runInParallel(list<string> rows, array<int, num_letters>& statistics) {
 	}
 }
 
-/*
-*  known issue:
-*  - will not work with huge files. potential solution - split file processing to short cycles
-*    in each cycle limit number of rows that are taken for processing
-*/
 array<int, num_letters> parallel_histogram(const std::string& file_path) {
 
 	array<int, num_letters> statistics;
